@@ -83,6 +83,24 @@ moduleId.addEventListener('click', function () {
   purchButton.style.backgroundColor = '';
 });
 
+// Active button click  
+document.addEventListener("DOMContentLoaded", function () {
+  const navItems = document.querySelectorAll(".nav-item");
+
+  navItems.forEach((item) => {
+      item.addEventListener("click", function () {
+          navItems.forEach((navItem) => {
+              navItem.classList.remove("active");
+          });
+          this.classList.add("active");
+      });
+  });
+});
+$(document).ready(function() {
+  var currentPath = window.location.pathname;
+  var activeNavItem = $('li[data-link="' + currentPath + '"]');
+  activeNavItem.addClass('active');
+});
 
 
 
